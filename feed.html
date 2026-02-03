@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лента - WekoSocial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/feed.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Верхняя навигация -->
+    <nav class="navbar navbar-fixed">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="feed.html" class="logo">
+                    <i class="fas fa-users"></i>
+                    <span>WekoSocial</span>
+                </a>
+            </div>
+            
+            <div class="navbar-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Поиск по людям, постам..." id="searchInput">
+                </div>
+            </div>
+            
+            <div class="navbar-menu">
+                <a href="feed.html" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Главная</span>
+                </a>
+                <a href="friends.html" class="nav-link">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Друзья</span>
+                </a>
+                <a href="messages.html" class="nav-link">
+                    <i class="fas fa-comments"></i>
+                    <span>Сообщения</span>
+                    <span class="badge">3</span>
+                </a>
+                <a href="notifications.html" class="nav-link">
+                    <i class="fas fa-bell"></i>
+                    <span>Уведомления</span>
+                    <span class="badge">5</span>
+                </a>
+                
+                <!-- Профиль пользователя -->
+                <div class="user-dropdown" id="userDropdown">
+                    <button class="user-btn">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=4A76A8&color=fff" 
+                             alt="Профиль" 
+                             class="user-avatar">
+                        <span class="user-name">Иван Иванов</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i> Мой профиль
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Настройки
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i> Выйти
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Мобильное меню -->
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <div class="container main-container">
+        <div class="feed-layout">
+            <!-- Левая колонка -->
+            <aside class="sidebar-left">
+                <!-- Профиль пользователя -->
+                <div class="profile-card">
+                    <div class="profile-cover">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4" alt="Обложка">
+                    </div>
+                    <div class="profile-info">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=4A76A8&color=fff&size=100" 
+                             alt="Аватар" 
+                             class="profile-avatar">
+                        <h3 class="profile-name">Иван Иванов</h3>
+                        <p class="profile-bio">Люблю путешествия и фотографию</p>
+                        
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number">156</span>
+                                <span class="stat-label">Друзей</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">89</span>
+                                <span class="stat-label">Постов</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">1.2K</span>
+                                <span class="stat-label">Лайков</span>
+                            </div>
+                        </div>
+                        
+                        <a href="profile.html" class="btn btn-outline btn-block">
+                            <i class="fas fa-user-edit"></i> Редактировать профиль
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Быстрые действия -->
+                <div class="quick-actions">
+                    <h4>Быстрые действия</h4>
+                    <button class="action-btn" id="createPostBtn">
+                        <i class="fas fa-edit"></i> Создать пост
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-camera"></i> Добавить фото
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-calendar"></i> Создать событие
+                    </button>
+                </div>
+
+                <!-- Друзья онлайн -->
+                <div class="friends-online">
+                    <h4>Друзья онлайн <span class="online-count">12</span></h4>
+                    <div class="friends-list">
+                        <div class="friend-item">
+                            <img src="https://ui-avatars.com/api/?name=Anna&background=FF6B6B&color=fff" 
+                                 alt="Анна" 
+                                 class="friend-avatar">
+                            <div class="friend-info">
+                                <span class="friend-name">Анна Петрова</span>
+                                <span class="friend-status online">В сети</span>
+                            </div>
+                        </div>
+                        <div class="friend-item">
+                            <img src="https://ui-avatars.com/api/?name=Alex&background=4ECDC4&color=fff" 
+                                 alt="Алексей" 
+                                 class="friend-avatar">
+                            <div class="friend-info">
+                                <span class="friend-name">Алексей Сидоров</span>
+                                <span class="friend-status online">В сети</span>
+                            </div>
+                        </div>
+                        <!-- Другие друзья -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Центральная колонка (Лента) -->
+            <main class="feed-main">
+                <!-- Создание поста -->
+                <div class="create-post-card">
+                    <div class="post-input">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=4A76A8&color=fff" 
+                             alt="Аватар" 
+                             class="post-avatar">
+                        <textarea 
+                            placeholder="Что у вас нового, Иван?" 
+                            rows="3"
+                            id="postContent"></textarea>
+                    </div>
+                    <div class="post-actions">
+                        <div class="media-buttons">
+                            <button class="media-btn" title="Фото/Видео">
+                                <i class="fas fa-image"></i> Фото
+                            </button>
+                            <button class="media-btn" title="Отметить друзей">
+                                <i class="fas fa-user-tag"></i> Отметить
+                            </button>
+                            <button class="media-btn" title="Чувства/Действия">
+                                <i class="fas fa-smile"></i> Чувства
+                            </button>
+                            <button class="media-btn" title="Местоположение">
+                                <i class="fas fa-map-marker-alt"></i> Место
+                            </button>
+                        </div>
+                        <button class="btn btn-primary" id="publishPostBtn">
+                            <i class="fas fa-paper-plane"></i> Опубликовать
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Посты -->
+                <div id="postsContainer">
+                    <!-- Посты будут загружаться здесь -->
+                    <div class="post-card">
+                        <div class="post-header">
+                            <img src="https://ui-avatars.com/api/?name=Anna&background=FF6B6B&color=fff" 
+                                 alt="Анна" 
+                                 class="post-author-avatar">
+                            <div class="post-author-info">
+                                <h4>Анна Петрова</h4>
+                                <span class="post-time">2 часа назад</span>
+                            </div>
+                            <button class="post-menu">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="post-content">
+                            <p>Прекрасный день в горах! 🏔️ Природа невероятно красива.</p>
+                            <div class="post-images">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4" 
+                                     alt="Горы" 
+                                     class="post-image">
+                            </div>
+                        </div>
+                        
+                        <div class="post-stats">
+                            <span class="like-count"><i class="fas fa-heart"></i> 245</span>
+                            <span class="comment-count"><i class="fas fa-comment"></i> 34</span>
+                            <span class="share-count"><i class="fas fa-share"></i> 12</span>
+                        </div>
+                        
+                        <div class="post-actions">
+                            <button class="post-action-btn like-btn">
+                                <i class="far fa-heart"></i> Нравится
+                            </button>
+                            <button class="post-action-btn comment-btn">
+                                <i class="far fa-comment"></i> Комментировать
+                            </button>
+                            <button class="post-action-btn share-btn">
+                                <i class="fas fa-share"></i> Поделиться
+                            </button>
+                        </div>
+                        
+                        <div class="post-comments">
+                            <div class="comment">
+                                <img src="https://ui-avatars.com/api/?name=Alex&background=4ECDC4&color=fff" 
+                                     alt="Алексей" 
+                                     class="comment-avatar">
+                                <div class="comment-content">
+                                    <h5>Алексей Сидоров</h5>
+                                    <p>Красиво! Где это?</p>
+                                    <span class="comment-time">1 час назад</span>
+                                </div>
+                            </div>
+                            
+                            <div class="add-comment">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=4A76A8&color=fff" 
+                                     alt="Вы" 
+                                     class="comment-avatar">
+                                <input type="text" placeholder="Напишите комментарий...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Правая колонка -->
+            <aside class="sidebar-right">
+                <!-- Реклама -->
+                <div class="advertisement">
+                    <h4>Рекомендуем</h4>
+                    <div class="ad-content">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d" alt="Реклама">
+                        <h5>Новое приложение для фотографий</h5>
+                        <p>Скачайте бесплатно и редактируйте фото как профи!</p>
+                        <button class="btn btn-primary btn-sm">Узнать больше</button>
+                    </div>
+                </div>
+
+                <!-- Группы -->
+                <div class="groups-section">
+                    <h4>Ваши группы</h4>
+                    <div class="group-item">
+                        <img src="https://ui-avatars.com/api/?name=Travel&background=FFC107&color=000" 
+                             alt="Путешествия" 
+                             class="group-avatar">
+                        <div class="group-info">
+                            <h5>Любители путешествий</h5>
+                            <span>156 участников</span>
+                        </div>
+                    </div>
+                    <div class="group-item">
+                        <img src="https://ui-avatars.com/api/?name=Photo&background=E91E63&color=fff" 
+                             alt="Фотография" 
+                             class="group-avatar">
+                        <div class="group-info">
+                            <h5>Клуб фотографов</h5>
+                            <span>89 участников</span>
+                        </div>
+                    </div>
+                    <a href="#" class="see-all">Показать все группы</a>
+                </div>
+
+                <!-- События -->
+                <div class="events-section">
+                    <h4>Ближайшие события</h4>
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="event-day">15</span>
+                            <span class="event-month">Май</span>
+                        </div>
+                        <div class="event-info">
+                            <h5>Встреча выпускников</h5>
+                            <span>Москва, 18:00</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Модальное окно создания поста -->
+    <div id="createPostModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Создать пост</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <textarea 
+                    placeholder="Что у вас нового?" 
+                    rows="6"
+                    id="modalPostContent"></textarea>
+                
+                <div class="media-preview" id="mediaPreview"></div>
+                
+                <div class="modal-actions">
+                    <button class="modal-action-btn" id="addPhotoBtn">
+                        <i class="fas fa-image"></i> Фото/Видео
+                    </button>
+                    <button class="modal-action-btn">
+                        <i class="fas fa-user-tag"></i> Отметить друзей
+                    </button>
+                    <button class="modal-action-btn">
+                        <i class="fas fa-map-marker-alt"></i> Местоположение
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelPostBtn">Отмена</button>
+                <button class="btn btn-primary" id="submitPostBtn">Опубликовать</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Загрузка -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Загрузка...</p>
+        </div>
+    </div>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/feed.js"></script>
+</body>
+</html>

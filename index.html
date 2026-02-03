@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WekoSocial - Социальная сеть</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-users"></i>
+                    <span>WekoSocial</span>
+                </a>
+            </div>
+            
+            <div class="navbar-menu">
+                <a href="login.html" class="btn btn-outline">Войти</a>
+                <a href="register.html" class="btn btn-primary">Зарегистрироваться</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Общайтесь с друзьями и миром вокруг вас</h1>
+                <p class="hero-subtitle">Присоединяйтесь к самой быстрорастущей социальной сети. Делитесь моментами, находите друзей и открывайте новое.</p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-user-plus"></i> Начать бесплатно
+                    </a>
+                    <a href="login.html" class="btn btn-outline btn-lg">
+                        <i class="fas fa-sign-in-alt"></i> Уже есть аккаунт?
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf" alt="Социальная сеть">
+            </div>
+        </div>
+    </section>
+
+    <!-- Особенности -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Почему WekoSocial?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Находите друзей</h3>
+                    <p>Подключайтесь к друзьям, семьям и знакомым по всему миру.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Делитесь моментами</h3>
+                    <p>Публикуйте фото, видео и мысли с вашими друзьями.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Общайтесь в реальном времени</h3>
+                    <p>Отправляйте сообщения и общайтесь через видео-звонки.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Конфиденциальность</h3>
+                    <p>Полный контроль над вашими данными и приватностью.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>WekoSocial</h4>
+                    <p>Социальная сеть для настоящего общения</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="login.html">Войти</a></li>
+                        <li><a href="register.html">Регистрация</a></li>
+                        <li><a href="#">О нас</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="#">Помощь</a></li>
+                        <li><a href="#">Поддержка</a></li>
+                        <li><a href="#">Конфиденциальность</a></li>
+                        <li><a href="#">Условия</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@wekosocial.com</li>
+                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, Россия</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 WekoSocial. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
